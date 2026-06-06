@@ -20,10 +20,10 @@ function MainContent(){
   const [count, setCount] = useState(4)
   const [total, setTotal] = useState(0)
   const [items, setItems] = useState([
-    <ImageComponent setCount={setCount} name="Item 1" price="$19.99" image_url={"https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg?w=2210&quality=70"}/>,
-    <ImageComponent setCount={setCount} name="Item 2" price="$29.99" image_url={"https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg?w=2210&quality=70"}/>,
-    <ImageComponent setCount={setCount} name="Item 3" price="$39.99" image_url={"https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg?w=2210&quality=70"}/>,
-    <ImageComponent setCount={setCount} name="Item 4" price="$49.99" image_url={"https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg?w=2210&quality=70"}/> 
+    <ImageComponent name="Item 1" price="$19.99" image_url={"https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg?w=2210&quality=70"}/>,
+    <ImageComponent name="Item 2" price="$29.99" image_url={"https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg?w=2210&quality=70"}/>,
+    <ImageComponent name="Item 3" price="$39.99" image_url={"https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg?w=2210&quality=70"}/>,
+    <ImageComponent name="Item 4" price="$49.99" image_url={"https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg?w=2210&quality=70"}/> 
   ])
   const [cart,setCart] = useState([
 
@@ -37,7 +37,7 @@ function MainContent(){
         <div className='h-full col-span-3 bg-green-400'>
           <p className='text-2xl text-center'>Remaining Items : {count}</p>
         </div>
-        <div className='h-full col-span-6  bg-blue-400 shadow-lg grid grid-cols-3 gap-4 p-4' >
+        <div className='h-full col-span-6 bg-blue-400 shadow-lg grid grid-cols-3 gap-4 p-4' >
           {
             items.map((item,index)=>{
               return(
@@ -61,16 +61,15 @@ function MainContent(){
         </div>
         <div className='h-full col-span-3  bg-red-400 shadow-lg  '  >
           <p>Total Items:{total}</p>
-          <p>Items in Cart:</p>
+          <p>Items in Cart: {cart.length}</p>
           <div>
             {
               cart.map((item,index)=>{
                 return(
                   <div key={index} className='w-full h-full'>
-                    {item.props.name} - {item.props.price }
+                    {item.props.name} - {item.props.price}
                     
                   </div>  
-
                 )
               })
             }
