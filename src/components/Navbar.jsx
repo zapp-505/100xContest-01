@@ -3,7 +3,7 @@ function Navbar() {
         <div className="flex items-center gap-4" >
             <p>Logo</p>
             <input type="search" placeholder="Search..." className="text-gray-800" /></div>
-        <div className="ps-8 flex justify-between gap-2">
+        <div className="ps-8 flex justify-between gap-8">
             <p>About Us</p>
             <p>Login</p>
             <p>Signup</p>
